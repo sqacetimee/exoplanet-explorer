@@ -44,7 +44,7 @@ const FACTORS = [
     weight: "28%",
     color: "#38bdf8",
     ideal: "240 – 270 K equilibrium temperature",
-    why: "Equilibrium temperature is the strongest single predictor of surface liquid-water potential. The curve peaks at 255 K, which is Earth's own equilibrium temperature (the 288 K surface temperature includes a 33 K greenhouse offset not captured by pl_eqt). Kepler-442 b at 241 K and Kepler-452 b at 265 K are both very close to this peak. Below 195 K, CO₂ atmospheric collapse is probable; above 350 K, runaway greenhouse risk escalates rapidly.",
+    why: "Equilibrium temperature is the strongest single predictor of surface liquid-water potential. The curve peaks at 255 K — Earth's own equilibrium temperature (the 288 K surface temperature includes a 33 K greenhouse offset not captured by pl_eqt). Kepler-442 b at 241 K and Kepler-452 b at 265 K are both very close to this peak. Below 195 K, CO₂ atmospheric collapse is probable; above 350 K, runaway greenhouse risk escalates rapidly.",
     missing: "0.28 — the largest missing-data penalty, reflecting how central temperature is to the model.",
   },
   {
@@ -62,7 +62,7 @@ const FACTORS = [
     weight: "10%",
     color: "#fbbf24",
     ideal: "Jeans parameter g/T_norm ≈ 1 (Earth baseline)",
-    why: "A simplified Jeans escape estimate: the ratio of surface gravity to normalised equilibrium temperature approximates how well a planet retains molecular gas. High gravity and low temperature favour retention of water vapour, CO₂, and nitrogen, all of which are essential for habitable surface chemistry.",
+    why: "A simplified Jeans escape estimate: the ratio of surface gravity to normalised equilibrium temperature approximates how well a planet retains molecular gas. High gravity and low temperature favour retention of water vapour, CO₂, and nitrogen — essential for habitable surface chemistry.",
     missing: "0.36 — requires all three of radius, mass, and temperature.",
   },
   {
@@ -85,7 +85,7 @@ const SIMPLE_STEPS = [
   {
     icon: "🌡️",
     title: "Is the temperature right for liquid water?",
-    body: "This is the biggest factor (28% of the score). Earth's equilibrium temperature is 255 K. Planets in the 240–270 K range score highest. With a greenhouse effect like Earth's, their surfaces could support liquid water.",
+    body: "This is the biggest factor (28% of the score). Earth's equilibrium temperature is 255 K. Planets in the 240–270 K range score highest — with a greenhouse effect like Earth's, their surfaces could support liquid water.",
   },
   {
     icon: "⭐",
@@ -95,7 +95,7 @@ const SIMPLE_STEPS = [
   {
     icon: "🕰️",
     title: "Is the orbit in the right place?",
-    body: "Very short orbits (under 10 days) likely mean the planet is tidally locked, with one side in permanent daylight and one in permanent darkness. Longer orbits, like Earth's 365-day year, score higher.",
+    body: "Very short orbits (under 10 days) likely mean the planet is tidally locked — one side in permanent daylight, one in permanent darkness. Longer orbits, like Earth's 365-day year, score higher.",
   },
   {
     icon: "📊",
@@ -175,7 +175,7 @@ export default function ModelPage() {
           letterSpacing: "-0.01em",
         }}
       >
-        <span>Technical details: formula, weights &amp; sub-score curves</span>
+        <span>Technical details — formula, weights &amp; sub-score curves</span>
         {showTechnical ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
       </button>
 

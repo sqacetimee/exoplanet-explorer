@@ -87,7 +87,7 @@ export function QuickSearch() {
           onFocus={() => setOpen(true)}
           onBlur={() => setTimeout(() => setOpen(false), 150)}
           onKeyDown={onKey}
-          placeholder="Search 5,000 exoplanets. Try 'Kepler', 'TRAPPIST', 'TOI'..."
+          placeholder="Search 5,000 exoplanets — try 'Kepler', 'TRAPPIST', 'TOI'…"
           style={{
             flex: 1, background: "none", border: "none", outline: "none",
             fontSize: 14, color: "#e2e8f0",

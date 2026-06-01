@@ -220,11 +220,11 @@ export function getPlanetInsightText(planet: Planet): string {
     } else if (t < 200) {
       parts.push(`An equilibrium temperature of ${Math.round(t)} K (${tc}°C) is colder than Mars at its warmest. Liquid water is almost certainly not present on the surface, though subsurface geothermal activity could still create habitable pockets.`);
     } else if (t < 240) {
-      parts.push(`At ${Math.round(t)} K (${tc}°C), the equilibrium temperature is cool but within the plausible habitable zone. Earth's own equilibrium temperature is 255 K. With a similar greenhouse effect, surface temperatures here could reach above freezing. The habitability score places this in the cool-but-viable range.`);
+      parts.push(`At ${Math.round(t)} K (${tc}°C), the equilibrium temperature is cool but within the plausible habitable zone. Earth's own equilibrium temperature is 255 K — with a similar greenhouse effect, surface temperatures could reach above freezing. The habitability score places this in the cool-but-viable range.`);
     } else if (t <= 270) {
-      parts.push(`An equilibrium temperature of ${Math.round(t)} K (${tc}°C) is close to Earth's own equilibrium temperature of 255 K, which is the sweet spot our model scores highest. With an Earth-like greenhouse effect, the surface temperature would be near or above 0°C. This is one of the most favorable equilibrium temperatures for surface liquid water.`);
+      parts.push(`An equilibrium temperature of ${Math.round(t)} K (${tc}°C) is close to Earth's own equilibrium temperature of 255 K — this is the sweet spot our model scores highest. With an Earth-like greenhouse effect, the surface temperature would be near or above 0°C. This is one of the most favorable equilibrium temperatures for surface liquid water.`);
     } else if (t <= 320) {
-      parts.push(`At ${Math.round(t)} K (${tc}°C), the planet is warmer than Earth's equilibrium temperature of 255 K, but still within the habitable zone. With an Earth-like greenhouse effect the surface could reach 50–80°C, which is hot but not necessarily fatal. The habitability score applies a modest penalty for the increased runaway-greenhouse risk at this temperature.`);
+      parts.push(`At ${Math.round(t)} K (${tc}°C), the planet is warmer than Earth's equilibrium temperature of 255 K, but still within the habitable zone. With an Earth-like greenhouse effect the surface could reach 50–80°C — hot but not necessarily fatal. The habitability score applies a modest penalty for the increased runaway-greenhouse risk at this temperature.`);
     } else if (t <= 500) {
       parts.push(`At ${Math.round(t)} K (${tc}°C), the planet runs significantly warmer than what Earth-like biology can tolerate under Earth-like pressure. Liquid water on the surface would require an unusually high atmospheric pressure, and runaway greenhouse feedback becomes a real risk.`);
     } else {
@@ -261,13 +261,13 @@ export function getPlanetInsightText(planet: Planet): string {
       const teff = planet.stellarTeff;
       const stellarClass = getStellarClass(teff);
       if (teff < 3200) {
-        parts.push(`The host star is a ${stellarClass} (${teff.toFixed(0)} K), among the most XUV-active stellar types known. Late M-dwarfs emit 6–8× more extreme-ultraviolet radiation per unit bolometric flux than the Sun, and their flare rates remain high for billions of years. This creates severe atmosphere-stripping risk even for planets in the habitable zone. The Atmosphere Retention Metric (ARM) applies a significant penalty to the habitability score.`);
+        parts.push(`The host star is a ${stellarClass} (${teff.toFixed(0)} K) — among the most XUV-active stellar types known. Late M-dwarfs emit 6–8× more extreme-ultraviolet radiation per unit bolometric flux than the Sun, and their flare rates remain high for billions of years. This creates severe atmosphere-stripping risk even for planets in the habitable zone. The Atmosphere Retention Metric (ARM) applies a significant penalty to the habitability score.`);
       } else if (teff < 4000) {
-        parts.push(`The host star is an early-to-mid ${stellarClass} (${teff.toFixed(0)} K). These stars emit 4–5× more XUV than the Sun relative to their total luminosity, and their habitable zones are very close in, raising tidal lock and flare risk. The ARM calculation places this planet near or below the cosmic shoreline, the boundary above which planets tend to retain their atmospheres. The score includes a moderate stellar-environment penalty.`);
+        parts.push(`The host star is an early-to-mid ${stellarClass} (${teff.toFixed(0)} K). These stars emit 4–5× more XUV than the Sun relative to their total luminosity, and their habitable zones are very close in, raising tidal lock and flare risk. The ARM calculation places this planet near or below the cosmic shoreline — the boundary above which planets tend to retain their atmospheres. The score includes a moderate–significant stellar-environment penalty.`);
       } else if (teff < 5200) {
-        parts.push(`The host star is a ${stellarClass} (${teff.toFixed(0)} K), significantly calmer than M-dwarfs, with XUV fluxes only about 1.2–1.8× the Sun's. K-dwarfs represent a sweet spot: long-lived, stable, and with habitable zones at orbital periods where tidal locking is unlikely. The ARM score for this planet is moderately positive, meaning atmospheric retention is favoured but not guaranteed.`);
+        parts.push(`The host star is a ${stellarClass} (${teff.toFixed(0)} K) — significantly calmer than M-dwarfs, with XUV fluxes only ~1.2–1.8× the Sun's. K-dwarfs represent a "sweet spot": long-lived, stable, and with habitable zones at orbital periods where tidal locking is unlikely. The ARM score for this planet is moderately positive, meaning atmospheric retention is favoured but not guaranteed.`);
       } else if (teff < 7500) {
-        parts.push(`The host star is a ${stellarClass} (${teff.toFixed(0)} K), similar in character to the Sun. G-dwarfs emit near-baseline XUV levels, and ${planet.name} lies above the cosmic shoreline (positive ARM), meaning atmosphere retention is strongly favoured. This is one of the most benign stellar environments for long-term planetary habitability.`);
+        parts.push(`The host star is a ${stellarClass} (${teff.toFixed(0)} K) — similar in character to the Sun. G-dwarfs emit near-baseline XUV levels (≈1×), and ${planet.name} lies above the cosmic shoreline (positive ARM), meaning atmosphere retention is strongly favoured. This is one of the most benign stellar environments for long-term planetary habitability.`);
       } else {
         parts.push(`The host star is a ${stellarClass} (${teff.toFixed(0)} K). Hotter stars evolve quickly off the main sequence, leaving a narrower window for life to emerge. Their habitable zones shift inward rapidly as the star brightens. The ARM for this planet is positive due to relatively lower sustained XUV activity, but the shorter stellar lifetime is a separate concern not captured in this score.`);
       }
@@ -276,11 +276,11 @@ export function getPlanetInsightText(planet: Planet): string {
       if (per < 15) {
         parts.push(`A ${per.toFixed(1)}-day orbital period in the habitable temperature range is a strong indicator of an M-dwarf host star. M-dwarfs are notorious for violent stellar flares and coronal mass ejections that can strip a planetary atmosphere entirely. The score reflects a significant stellar environment penalty.`);
       } else if (per < 50) {
-        parts.push(`The ${per.toFixed(1)}-day orbital period within a habitable temperature suggests this planet likely orbits an M-dwarf, a cool and dim star whose habitable zone is very close-in. M-dwarfs can be highly active, emitting flares that erode atmospheres over time.`);
+        parts.push(`The ${per.toFixed(1)}-day orbital period within a habitable temperature suggests this planet likely orbits an M-dwarf — a cool, dim star whose habitable zone is very close-in. M-dwarfs can be highly active, emitting flares that erode atmospheres over time.`);
       } else if (per < 100) {
         parts.push(`At ${per.toFixed(1)} days, this planet's period is consistent with a K-dwarf or outer M-dwarf host. Stellar flare risk is reduced compared to shorter-period habitable-zone planets, though not negligible.`);
       } else {
-        parts.push(`An orbital period of ${per.toFixed(1)} days in a habitable temperature range points to a K- or G-dwarf host, stars that are far less flare-active than M-dwarfs. This is a good indicator for long-term atmospheric stability.`);
+        parts.push(`An orbital period of ${per.toFixed(1)} days in a habitable temperature range points to a K- or G-dwarf host — stars that are far less flare-active than M-dwarfs. This is a favourable indicator for long-term atmospheric stability.`);
       }
     }
   }

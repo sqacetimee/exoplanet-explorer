@@ -58,9 +58,9 @@ export default function DataQualityPage() {
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             {[
-              { title: "Transit-only detections", body: "Give radius but not mass. Follow-up radial velocity is required for mass measurement, which is time-consuming and not always performed." },
+              { title: "Transit-only detections", body: "Give radius but not mass. Follow-up radial velocity is required for mass measurement — this is time-consuming and not always performed." },
               { title: "Radial velocity detections", body: "Give mass (as a minimum) but not radius, since no transit shadow is observed." },
-              { title: "Equilibrium temperature (78%)", body: "Requires stellar luminosity and albedo. When these are uncertain, temperature may be omitted entirely. This is the least complete key field." },
+              { title: "Equilibrium temperature (78%)", body: "Requires stellar luminosity and albedo. When these are uncertain, temperature may be omitted entirely — this is the least complete key field." },
               { title: "Distance", body: "Depends on parallax measurements (Gaia). Older or faint stars may have less precise astrometry." },
             ].map(({ title, body }) => (
               <div key={title}>
@@ -126,7 +126,7 @@ export default function DataQualityPage() {
               {[
                 ["pl_name",         "name",              "Planet name"],
                 ["hostname",        "hostStar",          "Host star name"],
-                ["st_teff",         "stellarTeff",       "Host star effective temperature (K), used for ARM scoring"],
+                ["st_teff",         "stellarTeff",       "Host star effective temperature (K) — used for ARM scoring"],
                 ["disc_year",       "discoveryYear",     "Year of discovery"],
                 ["discoverymethod", "discoveryMethod",   "Detection technique"],
                 ["pl_rade",         "radiusEarth",       "Planet radius in Earth radii"],

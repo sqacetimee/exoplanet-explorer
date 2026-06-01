@@ -32,7 +32,7 @@ const FEATURES = [
   {
     icon: <Database size={18} />, color: "#6366f1",
     title: "Real NASA Data",
-    desc: "Live from the Planetary Systems Composite Parameters table. 5,000+ confirmed exoplanets queried via TAP API.",
+    desc: "Live from the Planetary Systems Composite Parameters table — 5,000+ confirmed exoplanets queried via TAP API.",
   },
   {
     icon: <Zap size={18} />, color: "#8b5cf6",
@@ -108,7 +108,7 @@ export default function HomePage() {
                   color: "rgba(165,180,252,0.65)", maxWidth: 460,
                 }}>
                   Analyze distant worlds, compare planetary systems, and discover which
-                  exoplanets could be most Earth-like, powered by real NASA data.
+                  exoplanets could be most Earth-like — powered by real NASA data.
                 </p>
               </div>
 
@@ -196,7 +196,7 @@ export default function HomePage() {
               A note on the word &ldquo;habitable&rdquo;
             </p>
             <p style={{ margin: 0, fontSize: 12.5, lineHeight: 1.7, color: "rgba(253,211,77,0.72)" }}>
-              {`"Habitable" is a misnomer astronomers use loosely. When applied to exoplanets it typically means only: (1) the planet orbits in its star's habitable zone, (2) it is believed to be rocky, and (3) its surface gravity is near 1g. That's it. It does not mean humans could live there. Tidally locked rotation, lethal stellar flares, no magnetic field, no water, toxic or absent atmosphere, extreme pressure, or a permanent deep-freeze could each make such a planet completely uninhabitable, and we cannot measure most of these for confirmed exoplanets. Of all known "habitable zone" candidates, none are likely livable for humans. The scores on this site are a data-driven similarity index, not a scientific confirmation of life or livability.`}
+              {`"Habitable" is a misnomer astronomers use loosely. When applied to exoplanets it typically means only: (1) the planet orbits in its star's habitable zone, (2) it is believed to be rocky, and (3) its surface gravity is near 1g. That's it. It does not mean humans could live there. Tidally locked rotation, lethal stellar flares, no magnetic field, no water, toxic or absent atmosphere, extreme pressure, or a permanent deep-freeze could each make such a planet completely uninhabitable — and we cannot measure most of these for confirmed exoplanets. Of all known "habitable zone" candidates, none are likely livable for humans. The scores on this site are a data-driven similarity index, not a scientific confirmation of life or livability.`}
             </p>
           </div>
         </div>
@@ -236,7 +236,7 @@ export default function HomePage() {
                     style={{ color: "#818cf8", textUnderlineOffset: 3, textDecoration: "underline" }}>
                     NASA Exoplanet Archive
                   </a>{" "}
-                  pscomppars table, one composite row per confirmed planet using the best available
+                  pscomppars table — one composite row per confirmed planet using the best available
                   parameters from the literature. Ideal for population-level statistics.
                 </p>
                 {lastUpdated && (

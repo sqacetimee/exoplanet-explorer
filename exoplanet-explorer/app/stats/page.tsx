@@ -54,25 +54,25 @@ function generateInsights(planets: Planet[]): string[] {
   const mc: Record<string, number> = {};
   planets.forEach((p) => { if (p.discoveryMethod) mc[p.discoveryMethod] = (mc[p.discoveryMethod] ?? 0) + 1; });
   const top = Object.entries(mc).sort((a, b) => b[1] - a[1])[0];
-  if (top) r.push(`${top[0]} accounts for ${Math.round((top[1] / planets.length) * 100)}% of detections, making it the dominant method in this dataset.`);
+  if (top) r.push(`${top[0]} accounts for ${Math.round((top[1] / planets.length) * 100)}% of detections — the dominant method in this dataset.`);
 
   const withR = planets.filter((p) => p.radiusEarth !== null);
   if (withR.length > 5) {
     const big = withR.filter((p) => (p.radiusEarth ?? 0) > 1.5).length;
-    r.push(`${Math.round((big / withR.length) * 100)}% of planets with measured radii exceed 1.5 R⊕. Most confirmed exoplanets are sub-Neptunes or larger.`);
+    r.push(`${Math.round((big / withR.length) * 100)}% of planets with measured radii exceed 1.5 R⊕ — most confirmed exoplanets are sub-Neptunes or larger.`);
   }
 
   const highHab = planets.filter((p) => p.habitabilityScore >= 50).length;
-  r.push(`Only ${highHab} planets (${Math.round((highHab / planets.length) * 100)}%) score 50 or above. Truly Earth-like candidates are rare.`);
+  r.push(`Only ${highHab} planets (${Math.round((highHab / planets.length) * 100)}%) score ≥ 50 — truly Earth-like candidates are rare.`);
 
   const noMass = planets.filter((p) => p.massEarth === null).length;
-  r.push(`Mass is missing for ${Math.round((noMass / planets.length) * 100)}% of planets, which is typical for transit detections without radial-velocity follow-up.`);
+  r.push(`Mass is missing for ${Math.round((noMass / planets.length) * 100)}% of planets — typical for transit detections without radial-velocity follow-up.`);
 
   const years = planets.map((p) => p.discoveryYear ?? 0).filter(Boolean);
   if (years.length > 5) {
     const max = Math.max(...years);
     const recent = planets.filter((p) => (p.discoveryYear ?? 0) >= max - 5).length;
-    r.push(`${recent} planets confirmed in the last 5 years. Discovery rate is accelerating with space telescope missions.`);
+    r.push(`${recent} planets confirmed in the last 5 years — discovery rate accelerating with space telescope missions.`);
   }
 
   return r;
@@ -127,7 +127,7 @@ export default function StatsPage() {
             <Lightbulb size={15} style={{ color: "#fbbf24" }} />
             <span style={{ fontSize: 13, fontWeight: 600, color: "#c7d2fe" }}>
               Dataset Insights
-              {loading && <span style={{ color: "#818cf8", fontWeight: 400, fontSize: 11, marginLeft: 8 }}>updating…</span>}
+              {loading && <span style={{ color: "#818cf8", fontWeight: 400, fontSize: 11, marginLeft: 8 }}>— updating…</span>}
             </span>
           </div>
           <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 6 }}>
@@ -153,7 +153,7 @@ export default function StatsPage() {
         </ChartCard>
 
         <ChartCard title="Orbital Period Distribution" loading={loading}
-          description="Orbital period in days, a proxy for distance from the host star">
+          description="Orbital period in days — a proxy for distance from the host star">
           <OrbitalPeriodChart planets={planets} />
         </ChartCard>
 

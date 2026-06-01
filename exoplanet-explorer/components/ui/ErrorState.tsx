@@ -19,7 +19,7 @@ export function ErrorState({ error, onRetry, usingFallback }: ErrorStateProps) {
         <AlertTriangle size={15} style={{ color: "#f59e0b", flexShrink: 0, marginTop: 1 }} />
         <div style={{ flex: 1 }}>
           <p style={{ fontSize: 13, fontWeight: 500, color: "#fcd34d", margin: 0 }}>
-            Using fallback sample data. NASA data could not be loaded.
+            Using fallback sample data — NASA data could not be loaded.
           </p>
           <p style={{ fontSize: 12, color: "rgba(253,211,77,0.6)", margin: "4px 0 0" }}>
             Showing 20 curated well-known exoplanets. Live NASA data may be temporarily unavailable.
